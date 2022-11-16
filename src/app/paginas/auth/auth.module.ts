@@ -1,6 +1,6 @@
-import { NgModule, EventEmitter } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DatosService} from './../../servicios/datos.service';
 import { IonicModule } from '@ionic/angular';
@@ -19,8 +19,7 @@ import {RegisterComponent} from './register/register.component';
     IonicModule,
     AuthPageRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    EventEmitter
+    ReactiveFormsModule
   ],
   declarations: [
     AuthPage,

@@ -1,9 +1,2 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>auth</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<app-login *ngIf="modo == 1" (ingresar)="iniciarSesion($event)" (soyNuevo)="cambiaModo(2)"></app-login>
+<app-register *ngIf="modo == 2" (enviarUsuario)="registrarse($event)" (hola)="cambiaModo(1)"></app-register>

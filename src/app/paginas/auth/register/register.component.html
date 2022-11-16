@@ -1,3 +1,46 @@
-<p>
-  register works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registration form</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="">
+  <form [formGroup]="formulario">
+    <ion-item>
+      <ion-label position="floating">First name</ion-label>
+      <ion-input type="text" formControlName="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input type="text" formControlName="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Age</ion-label>
+      <ion-input type="number" formControlName="age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Birth date</ion-label>
+      <ion-input type="date" formControlName="birthDate"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="left">Gender</ion-label>
+      <ion-select formControlName="gender">
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form><br>
+  <ion-button expand="" (click)="enviar()">Sign up</ion-button><br><br>
+  <ion-item>
+    <ion-label>Do you have an account? </ion-label>
+    <ion-button (click)="loginMode()">Log in</ion-button>
+  </ion-item>
+</ion-content>
+

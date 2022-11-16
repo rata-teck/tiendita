@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Authentication form</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="">
+  <form [formGroup]="formulario">
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+  </form><br>
+  <ion-button expand="rect">Log in</ion-button><br><br>
+  <ion-item>
+    <ion-label>You're new?</ion-label>
+    <ion-button (click)="registerMode()">Sign up</ion-button>
+  </ion-item>
+</ion-content>
