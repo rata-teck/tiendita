@@ -14,7 +14,8 @@
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
   </form><br>
-  <ion-button expand="rect">Log in</ion-button><br><br>
+  <ion-label color="red" *ngIf="!formulario.valid && formulario.touched">Please insert a valid data</ion-label>
+  <ion-button expand="rect" *ngIf="formulario.valid" (click)="acceder()">Log in</ion-button><br><br>
   <ion-item>
     <ion-label>You're new?</ion-label>
     <ion-button (click)="registerMode()">Sign up</ion-button>

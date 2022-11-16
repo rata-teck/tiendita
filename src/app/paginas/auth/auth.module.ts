@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {DatosService} from './../../servicios/datos.service';
+import {AuthService} from './../../servicios/auth.service';
 import { IonicModule } from '@ionic/angular';
+import {RouterModule} from '@angular/router';
 
 import { AuthPageRoutingModule } from './auth-routing.module';
 
@@ -19,7 +20,8 @@ import {RegisterComponent} from './register/register.component';
     IonicModule,
     AuthPageRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   declarations: [
     AuthPage,
@@ -27,7 +29,7 @@ import {RegisterComponent} from './register/register.component';
     RegisterComponent
   ],
   providers:[
-    DatosService
+    AuthService
   ]
 })
 export class AuthPageModule {}

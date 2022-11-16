@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import {Usuario} from './../modelos/usuario';
-import {Producto} from './../modelos/producto';
-import {Carrito} from './../modelos/carrito';
 import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatosService {
+export class AuthService {
 
   private info = {
     headers : {

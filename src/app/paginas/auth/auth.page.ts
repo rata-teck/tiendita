@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DatosService} from './../../servicios/datos.service';
+import {AuthService} from './../../servicios/auth.service';
 import {Usuario} from './../../modelos/usuario';
 import {Router} from '@angular/router';
 
@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 export class AuthPage implements OnInit {
 
   constructor(
-    private datos : DatosService,
+    private datos : AuthService,
     private ruta : Router
   ) { }
 
@@ -29,9 +29,8 @@ export class AuthPage implements OnInit {
 
   public iniciarSesion(a1 : any){
     this.datos.buscarUsuario(a1.username, a1.password).subscribe(data => {
-      this.usuario = {...data}
+      this.ruta.navigateByUrl('/cli/'+data.token);
     });
-    this.ruta.navigateByUrl('/cli/'+this.usuario?.token);
   }
   public registrarse(usr : Usuario) : void{
     this.datos.registrarUsuario(usr).subscribe(data => {

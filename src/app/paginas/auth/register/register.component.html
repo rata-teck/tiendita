@@ -37,7 +37,8 @@
       </ion-select>
     </ion-item>
   </form><br>
-  <ion-button expand="" (click)="enviar()">Sign up</ion-button><br><br>
+  <ion-label color="red" *ngIf="!formulario.valid && formulario.touched">Please insert a valid data</ion-label>
+  <ion-button *ngIf="formulario.valid" expand="" (click)="enviar()">Sign up</ion-button><br><br>
   <ion-item>
     <ion-label>Do you have an account? </ion-label>
     <ion-button (click)="loginMode()">Log in</ion-button>
