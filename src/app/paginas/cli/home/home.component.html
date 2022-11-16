@@ -1,6 +1,7 @@
 <br><br>
 <ion-title>Products</ion-title><br>
-<ion-card *ngFor="let x of prods">
+<ion-item *ngFor="let x of prods" (click)="detalles(x.id)">
+<ion-card >
   <ion-img [src]="x.thumbnail" style="width: 100%;"></ion-img>
   <ion-card-content>
     <ion-card-title>{{x.title}}</ion-card-title>
@@ -10,3 +11,4 @@
     <ion-card-subtitle>{{x.description}}</ion-card-subtitle>
   </ion-card-content>
 </ion-card>
+</ion-item>

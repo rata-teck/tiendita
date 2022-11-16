@@ -1,3 +1,11 @@
-<p>
-  details works!
-</p>
+<ion-slides>
+  <ion-slide *ngFor="let x of producto.images" >
+    <ion-img [src]="x"></ion-img>
+  </ion-slide>
+</ion-slides>
+<ion-text>{{producto.brand}}</ion-text>
+<ion-title>{{producto.title}}</ion-title><br>
+<ion-label>$ {{producto.price}} ({{producto.discountPercentage}}% OFF)</ion-label><br><br>
+<ion-label>Category: {{producto.category}}</ion-label><br>
+<ion-label>Rating: {{producto.rating}}</ion-label><br>
+<ion-text>{{producto.description}}</ion-text>

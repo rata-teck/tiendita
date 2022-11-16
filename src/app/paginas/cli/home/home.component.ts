@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
+  public detalles(id : number): void{
+    this.irADetalles.emit(id);
+  }
+
 }

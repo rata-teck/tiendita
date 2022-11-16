@@ -10,19 +10,7 @@ import {FormBuilder, FormControl, Validators} from '@angular/forms';
 export class DetailsComponent implements OnInit {
 
   @Input()
-  public producto : Producto = {
-    id : 0,
-    description : '',
-    title : '',
-    price : 0,
-    discountPercentage : 0,
-    rating : 0,
-    stock : 0,
-    brand : '',
-    category : '',
-    thumbnail : '',
-    images : []
-  }
+  public producto! : Producto;
 
   public formulario? : any;
 

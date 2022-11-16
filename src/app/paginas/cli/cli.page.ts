@@ -15,7 +15,7 @@ export class CliPage implements OnInit {
 
   public productos? : Producto[];
 
-  public producto? : Producto;
+  public producto! : Producto;
 
   public carrito? : Carrito;
 
@@ -45,6 +45,19 @@ export class CliPage implements OnInit {
     this.datos.detalles(this.token, id).subscribe(data => {
       this.producto = {...data}
     });
+    this.modo = 3;
+    this.nombreModo = 'Details';
+  }
+  public cambiaModo(nuevo : number) : void{
+    this.modo = nuevo;
+    if(nuevo == 1){
+      this.nombreModo = 'Home';
+    }
+    else{
+      if(nuevo == 3){
+        this.nombreModo = 'Details';
+      }
+    }
   }
 
 }
