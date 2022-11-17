@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
       age : new FormControl(0, [Validators.required, Validators.min(18), Validators.max(98)]),
       username : new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
       password : new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
-      birthDate : new FormControl(Date.parse('January 1, 1992'), [Validators.required, Validators.min(Date.parse('January 1, 1992')), Validators.max(Date.now() - 86400000)]),
+      birthDate : new FormControl('01-01-1992', Validators.required ),
       gender : new FormControl('male', Validators.required)
     });
   }
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
       age: nuevo.age,
       username : nuevo.username,
       password : nuevo.password,
-      birthDate : nuevo.birthDate,
+      birthDate : Date.parse(nuevo.birthDate),
       gender : nuevo.gender
     }
     this.enviarUsuario.emit(this.usuario);

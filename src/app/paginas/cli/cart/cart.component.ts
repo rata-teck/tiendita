@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Carrito} from './../../../modelos/carrito';
+import {FullCarrito} from './../../../modelos/carrito';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +9,7 @@ import {Carrito} from './../../../modelos/carrito';
 export class CartComponent implements OnInit {
 
   @Input()
-  public carrito! : Carrito;
+  public fullCarrito! : FullCarrito;
 
   constructor() { }
 

@@ -11,7 +11,7 @@
     <ion-item (click)="cambiaModo(2)">
       <ion-label>Cart</ion-label>
     </ion-item><br><br><br>
-    <ion-item>
+    <ion-item href="/">
       <ion-label>Log out</ion-label>
     </ion-item>
   </ion-content>
@@ -27,7 +27,7 @@
   </ion-header>
   <ion-content>
     <app-home *ngIf="modo == 1" [prods]="productos" (irADetalles)="detalles($event)" (muestraMas)="masProductos()"></app-home>
-    <app-cart *ngIf="modo == 2"  [carrito]="carrito"></app-cart>
+    <app-cart *ngIf="modo == 2"  [fullCarrito]="full"></app-cart>
     <app-details *ngIf="modo == 3" [producto]="producto" (laGarra)="teCompraron($event)"></app-details>
   </ion-content>
 </div>

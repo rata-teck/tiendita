@@ -45,7 +45,7 @@ export class StoreService {
   }
 
   public verCarrito(id : string) : Observable<any>{
-    return this.cliente.get('https://dummyjson.com/auth/users/'+id+'/carts');
+    return this.cliente.get('https://dummyjson.com/auth/users/'+id+'/carts', this.infoPost());
   }
 
 }

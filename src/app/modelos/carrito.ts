@@ -6,5 +6,12 @@ export interface Carrito {
   discountedtotal : number,
   userid : number,
   totalproducts : number,
-  totalquality : number
+  totalquantity : number
+}
+
+export interface FullCarrito{
+  carts : Carrito[],
+  total : number,
+  tkip : number,
+  limit : number
 }

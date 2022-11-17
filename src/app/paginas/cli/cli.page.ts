@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StoreService} from './../../servicios/store.service';
 import {ActivatedRoute} from '@angular/router';
 import {Producto} from './../../modelos/producto';
-import {Carrito} from './../../modelos/carrito';
+import {Carrito, FullCarrito} from './../../modelos/carrito';
 
 @Component({
   selector: 'app-cli',
@@ -18,6 +18,8 @@ export class CliPage implements OnInit {
   public producto! : Producto;
 
   public carrito! : Carrito;
+
+  public full! : FullCarrito;
 
   public section! : number;
 
@@ -61,7 +63,7 @@ export class CliPage implements OnInit {
         if(nuevo == 2){
           this.nombreModo = 'Cart';
           this.datos.verCarrito(this.usrId).subscribe(data => {
-            this.carrito = {...data}
+            this.full = {...data}
           });
         }
     }
@@ -87,8 +89,8 @@ export class CliPage implements OnInit {
     this.datos.addCarrito(preCarrito2).subscribe(data => {
       this.carrito = {...data};
     });
-    this.modo = 2;
-    this.nombreModo = 'Cart';
+    this.modo = 1;
+    this.nombreModo = 'Home';
   }
 
 }
