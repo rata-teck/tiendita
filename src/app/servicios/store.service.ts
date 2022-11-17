@@ -40,4 +40,12 @@ export class StoreService {
     return this.cliente.get('https://dummyjson.com/auth/products/'+id, this.infoPost());
   }
 
+  public addCarrito(cart : any) : Observable<any>{
+    return this.cliente.post('https://dummyjson.com/auth/carts/add', cart, this.infoPost());
+  }
+
+  public verCarrito(id : string) : Observable<any>{
+    return this.cliente.get('https://dummyjson.com/auth/users/'+id+'/carts');
+  }
+
 }

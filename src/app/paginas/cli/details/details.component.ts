@@ -30,7 +30,7 @@ export class DetailsComponent implements OnInit {
   public laGarraSeMueve(){
     const adiosAmigo = {
       id : this.producto?.id,
-      cantidad : this.formulario.value.cantidad
+      quantity : this.formulario.value.cantidad
     }
     this.laGarra.emit(adiosAmigo); //Me voy a un lugar mejor ;)
   }

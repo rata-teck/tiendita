@@ -5,7 +5,16 @@
 </ion-slides>
 <ion-text>{{producto.brand}}</ion-text>
 <ion-title>{{producto.title}}</ion-title><br>
-<ion-label>$ {{producto.price}} ({{producto.discountPercentage}}% OFF)</ion-label><br><br>
+<ion-label>$ {{producto.price}} ({{producto.discountPercentage}}% OFF)</ion-label><br>
+
+  <ion-item>
+    <ion-label>Quantity:</ion-label>
+    <form [formGroup]="formulario">
+    <ion-input type="number" formControlName="cantidad"></ion-input>
+    </form>
+    <ion-button (click)="laGarraSeMueve()" [disabled]="!formulario.valid">Add to cart</ion-button>
+  </ion-item>
+
 <ion-label>Category: {{producto.category}}</ion-label><br>
 <ion-label>Rating: {{producto.rating}}</ion-label><br>
 <ion-text>{{producto.description}}</ion-text>

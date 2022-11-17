@@ -17,7 +17,7 @@ export class CliPage implements OnInit {
 
   public producto! : Producto;
 
-  public carrito? : Carrito;
+  public carrito! : Carrito;
 
   public section! : number;
 
@@ -52,15 +52,20 @@ export class CliPage implements OnInit {
     this.nombreModo = 'Details';
   }
   public cambiaModo(nuevo : number) : void{
-    this.modo = nuevo;
+
     if(nuevo == 1){
       this.nombreModo = 'Home';
     }
     else{
-      if(nuevo == 3){
-        this.nombreModo = 'Details';
-      }
+
+        if(nuevo == 2){
+          this.nombreModo = 'Cart';
+          this.datos.verCarrito(this.usrId).subscribe(data => {
+            this.carrito = {...data}
+          });
+        }
     }
+    this.modo = nuevo;
   }
 
   public masProductos() : void{
@@ -70,6 +75,20 @@ export class CliPage implements OnInit {
         this.productos?.push(x);
       }
     });
+  }
+
+  public teCompraron(preCarrito : any) : void{
+    const preCarrito2 = {
+      userId : this.usrId,
+      products : [
+        {...preCarrito}
+      ]
+    }
+    this.datos.addCarrito(preCarrito2).subscribe(data => {
+      this.carrito = {...data};
+    });
+    this.modo = 2;
+    this.nombreModo = 'Cart';
   }
 
 }

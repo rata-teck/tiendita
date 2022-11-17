@@ -1,3 +1,13 @@
-<p>
-  cart works!
-</p>
+<ion-card *ngFor="let x of carrito.products">
+  <ion-img [src]="x.thumbnail"></ion-img>
+  <ion-card-content>
+    <ion-card-subtitle>{{x.brand}}</ion-card-subtitle>
+    <ion-card-title>{{x.title}}</ion-card-title>
+    <ion-label>$ {{x.price}}</ion-label>
+  </ion-card-content>
+</ion-card>
+<ion-item>
+  <ion-text>Products: {{carrito.totalproducts}} <br> Total quantity: {{carrito.totalquality}}</ion-text><br>
+  <ion-label>Total: $ {{carrito.total}}</ion-label><br>
+  <ion-text>Discounted: $ {{carrito.discountedtotal}}</ion-text>
+</ion-item>
