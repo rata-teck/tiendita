@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import {Producto} from './../../../modelos/producto';
+import {InfiniteScrollCustomEvent} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,9 @@ export class HomeComponent implements OnInit {
   @Output()
   public irADetalles = new EventEmitter<number>();
 
+  @Output()
+  public muestraMas = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {}
@@ -22,4 +26,10 @@ export class HomeComponent implements OnInit {
     this.irADetalles.emit(id);
   }
 
+  onIonInfinite(ev : any) {
+    this.muestraMas.emit();
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 }

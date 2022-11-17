@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./paginas/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
-    path: 'cli/:token',
+    path: 'cli/:usrid/:token',
     loadChildren: () => import('./paginas/cli/cli.module').then( m => m.CliPageModule)
   }
 ];

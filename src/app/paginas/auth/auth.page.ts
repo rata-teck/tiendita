@@ -29,7 +29,7 @@ export class AuthPage implements OnInit {
 
   public iniciarSesion(a1 : any){
     this.datos.buscarUsuario(a1.username, a1.password).subscribe(data => {
-      this.ruta.navigateByUrl('/cli/'+data.token);
+      this.ruta.navigateByUrl('/cli/'+data.id+'/'+data.token);
     });
   }
   public registrarse(usr : Usuario) : void{

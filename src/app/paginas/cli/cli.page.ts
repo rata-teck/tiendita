@@ -19,9 +19,11 @@ export class CliPage implements OnInit {
 
   public carrito? : Carrito;
 
-  public section? : number;
+  public section! : number;
 
   public token : string = '';
+
+  public usrId : string = ';'
 
   public nombreModo? : string;
 
@@ -32,8 +34,9 @@ export class CliPage implements OnInit {
 
   ngOnInit() {
     this.token = this.ruta.snapshot.params['token'];
-    console.log(this.token);
+    this.usrId = this.ruta.snapshot.params["usrid"];
     this.section = 0;
+    console.log(this.token);
     this.datos.inicio(this.token, this.section ).subscribe(data => {
       this.productos = data.products;
     });
@@ -58,6 +61,15 @@ export class CliPage implements OnInit {
         this.nombreModo = 'Details';
       }
     }
+  }
+
+  public masProductos() : void{
+    this.section = this.section + 30;
+    this.datos.inicio(this.token, this.section).subscribe(data => {
+      for(let x of data.products){
+        this.productos?.push(x);
+      }
+    });
   }
 
 }

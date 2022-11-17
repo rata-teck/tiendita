@@ -12,3 +12,6 @@
   </ion-card-content>
 </ion-card>
 </ion-item>
+<ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+  <ion-infinite-scroll-content loadingText="Wait a moment..." loadingSpinner="lines-sharp-small"></ion-infinite-scroll-content>
+</ion-infinite-scroll>

@@ -26,7 +26,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <app-home *ngIf="modo == 1" [prods]="productos" (irADetalles)="detalles($event)"></app-home>
+    <app-home *ngIf="modo == 1" [prods]="productos" (irADetalles)="detalles($event)" (muestraMas)="masProductos()"></app-home>
     <app-cart *ngIf="modo == 2" ></app-cart>
     <app-details *ngIf="modo == 3" [producto]="producto"></app-details>
   </ion-content>
